@@ -3,6 +3,7 @@
 #include <memory>
 #include <utility>
 #include <vector>
+
 #include "core/task/include/task.hpp"
 
 namespace ppc {
@@ -10,8 +11,7 @@ namespace kavtorev_d_most_different_neighbor_elements_seq {
 
 class testTaskSequential : public ppc::core::Task {
  public:
-  explicit testTaskSequential(std::shared_ptr<ppc::core::TaskData> taskData_)
-      : Task(std::move(taskData_)) {
+  explicit testTaskSequential(std::shared_ptr<ppc::core::TaskData> taskData_) : Task(std::move(taskData_)) {
     if (!taskData_ || taskData_->inputs.empty() || taskData_->inputs[0] == nullptr) {
       std::cerr << "Error: taskData_->inputs is empty or null" << std::endl;
       return;
